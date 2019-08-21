@@ -1,3 +1,7 @@
+# course from this series
+# https://www.youtube.com/watch?v=nKxLfUrkLE8&list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_&index=3&t=0s
+# make sure you open VS Code in the base folder or the paths won't work below.
+
 from matplotlib import pyplot as plt 
 
 ages_x = [25,26,27,28,29,30,31, 32,33,34,35]
