@@ -3,6 +3,7 @@
 # make sure you open VS Code in the base folder or the paths won't work below.
 
 from matplotlib import pyplot as plt 
+import numpy as np
 import os 
 
 
@@ -23,24 +24,37 @@ js_dev_y = [16446, 16791, 18942, 21780, 25704, 29000, 34372, 37810, 43515, 46823
 dev_y = [17784, 16500, 18012, 20628, 25206, 30252, 34368, 38496, 42000, 46752, 49320, 53200, 56000, 62316, 64928, 67317, 68748, 73752, 77232,
          78000, 78508, 79536, 82488, 88935, 90000, 90056, 95000, 90000, 91633, 91660, 98150, 98964, 100000, 98988, 100000, 108923, 105000, 103117]
 
+x_indexes = np.arange(len(ages_x))
+barwidth = 0.25
 
-         
-plt.plot(ages_x, dev_y, color='k', linestyle='--', linewidth='3', label='All Devs') # k-- formats the line 
 
-plt.plot(ages_x, py_dev_y, color='#5a7d9a', marker='o', label='Python only')
+# Use the array created from the x values and to scoot the bars one way or the other so they
+# don't just lay on top of each other. Use the barwdith variable as an arbitrary value to set 
+# both width and the bar offsets. Use math in the .bar arguments to adjust offsets. Add or 
+# subtract values to add some padding between the bars too.
 
-plt.plot(ages_x, js_dev_y, color='#adad3b', marker='o', label='Javascript only')
+plt.bar(x_indexes - barwidth - 0.01, dev_y, width=barwidth, color='k', label='All Devs') # k-- formats the line 
+
+plt.bar(x_indexes, py_dev_y, width=barwidth, color='#5a7d9a', label='Python only')
+
+plt.bar(x_indexes + barwidth + 0.01, js_dev_y, width=barwidth, color='#adad3b', label='Javascript only')
 
 plt.grid('True')
+
+# Using numpy array to set the x axis allowing us to shift it for the bars, then sets the values
+# to the array index. Use xticks to re-assign the true values to the x axis.
+
+plt.xticks(ticks=x_indexes, labels=ages_x)
 plt.title('Median Salary (USD) by Age')
 plt.xlabel('Ages')
 plt.ylabel('Salary (USD)')
 plt.legend()
 
-# plt.tight_layout # optional to fix certain layout issues.
+plt.tight_layout() # optional to fix certain layout issues.
 
 print("Path at terminal when executing this file")
 print(os.getcwd() + "\n")
 
-plt.savefig('matpltlib/matpltut.png')
+# mak
+plt.savefig('matpltlib/matpltut_bars.png')
 plt.show()
