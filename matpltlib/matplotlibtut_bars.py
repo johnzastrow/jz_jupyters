@@ -56,5 +56,5 @@ print("Path at terminal when executing this file")
 print(os.getcwd() + "\n")
 
 # mak
-plt.savefig('matpltlib/matpltut_bars.png')
+plt.savefig('matpltut_bars.png')
 plt.show()

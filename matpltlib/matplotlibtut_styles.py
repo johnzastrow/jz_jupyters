@@ -42,5 +42,5 @@ plt.legend()
 print("Path at terminal when executing this file")
 print(os.getcwd() + "\n")
 
-plt.savefig('matpltlib/matpltut.png')
+plt.savefig('matpltut.png')
 plt.show()
