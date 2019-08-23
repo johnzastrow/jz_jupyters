@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # import matplotlib and numpy as usual
 import matplotlib.pyplot as plt
 import numpy as np
@@ -59,7 +58,6 @@ fig.axes[1].set_xticklabels(["2.5", "4", "Yay"], minor=True)
 fig.axes[1].set_xticks([5.0, 10.0, 11.0])
 fig.axes[1].xaxis.labelpad = 8.0
 #% end: automatic generated code from pylustrator
-=======
 # import matplotlib and numpy as usual
 import matplotlib.pyplot as plt
 import numpy as np
@@ -120,5 +118,4 @@ fig.axes[1].set_xticklabels(["2.5", "4", "Yay"], minor=True)
 fig.axes[1].set_xticks([5.0, 10.0, 11.0])
 fig.axes[1].xaxis.labelpad = 8.0
 #% end: automatic generated code from pylustrator
->>>>>>> 051a46779c0b569a818cb600cdf2db9420b620df
 plt.show()
