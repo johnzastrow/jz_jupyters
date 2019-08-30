@@ -5,7 +5,6 @@ import numpy as np
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 from matplotlib import dates as mpl_dates
-import seaborn as sns
 
 
 engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/weather')
@@ -25,7 +24,7 @@ engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/w
 # ----------
 
 
-df1 = pd.read_sql_table("v_daily_electric",engine)
+df1 = pd.read_sql_table("v_daily_electric", engine)
 elecusage_vals = df1['d_kwh']
 dater = df1['d_local']
 
